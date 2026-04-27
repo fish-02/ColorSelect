@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>街拍色彩誌 · Street Palette</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📷</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Noto+Serif+TC:wght@300;400&family=ZCOOL+QingKe+HuangYou&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ══════════════════════════
+       INTRO / GUIDE VIEW
+  ══════════════════════════ -->
+  <section id="view-intro" class="view active">
+    <div class="intro-bg"></div>
+
+    <!-- Hero -->
+    <div class="guide-hero">
+      <p class="intro-eyebrow">Street Palette</p>
+      <h1 class="intro-title">街拍<br><em>色彩誌</em></h1>
+      <p class="intro-sub">記錄每個瞬間的色彩故事，打造專屬的街拍活動拼圖</p>
+    </div>
+
+    <!-- Scrollable guide body -->
+    <div class="guide-body">
+
+      <div class="guide-divider">
+        <span class="guide-divider-label">使用指南</span>
+      </div>
+
+      <!-- Steps -->
+      <div class="guide-steps">
+        <div class="guide-step">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <h3 class="step-title">選擇色系</h3>
+            <p class="step-desc">從完整色環的色系中選出你的色彩方向，或使用隨機推薦替你選擇靈感。也可以跳過此步驟，直接進入拼圖。</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <h3 class="step-title">設定活動資訊</h3>
+            <p class="step-desc">填入活動名稱、日期，以及作者署名，這些資訊將印在拼圖上方。</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">03</div>
+          <div class="step-content">
+            <h3 class="step-title">選擇格數上傳</h3>
+            <p class="step-desc">選擇 <strong>1 格</strong>（單張精選）、<strong>3 格</strong>（橫式三聯）或 <strong>9 格</strong>（九宮格）拼法，點擊或拖放照片上傳。</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">04</div>
+          <div class="step-content">
+            <h3 class="step-title">自動色碼擷取</h3>
+            <p class="step-desc">系統自動分析每張照片，根據所選色系擷取對應的 HEX 色碼，顯示於照片下方。</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">05</div>
+          <div class="step-content">
+            <h3 class="step-title">美編與下載</h3>
+            <p class="step-desc">選擇邊框顏色與字體風格，生成 1080 × 1350 高解析度拼圖，一鍵下載後直接上傳 Instagram 分享。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature highlights -->
+      <div class="guide-divider">
+        <span class="guide-divider-label">功能特色</span>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+              <circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 010 20"/>
+              <path d="M2 12h20"/>
+            </svg>
+          </div>
+          <div class="feature-text">
+            <strong>完整色環</strong>
+            <span>多色系涵蓋全色譜</span>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+              <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+              <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
+            </svg>
+          </div>
+          <div class="feature-text">
+            <strong>彈性格數</strong>
+            <span>1 格 · 3 格 · 9 格自選</span>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+              <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </div>
+          <div class="feature-text">
+            <strong>自動色碼</strong>
+            <span>HEX 色碼即時擷取分析</span>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+          </div>
+          <div class="feature-text">
+            <strong>高解析下載</strong>
+            <span>1080 × 1350 · PNG 格式</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- All color spectrum preview -->
+      <div class="guide-divider">
+        <span class="guide-divider-label">色系一覽</span>
+      </div>
+
+      <div id="guideSwatches" class="guide-spectrum"></div>
+
+      <div class="guide-spacer"></div>
+
+    </div>
+
+    <!-- CTA footer -->
+    <div class="guide-footer">
+      <button class="btn-outline btn-lg" onclick="goToStep('color')">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="margin-right:8px;vertical-align:-2px">
+          <circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 010 20"/><path d="M2 12h20"/>
+        </svg>
+        選擇色系
+      </button>
+      <button class="btn-primary btn-lg" onclick="goToGridDirect()">
+        直接拼圖
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="margin-left:8px;vertical-align:-2px">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </button>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════
+       COLOR PICKER VIEW
+  ══════════════════════════ -->
+  <section id="view-color" class="view">
+    <header class="view-hd">
+      <button class="btn-ghost" onclick="goToStep('intro')">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        返回
+      </button>
+      <nav class="step-nav">
+        <span class="step active">01 &nbsp;色系</span>
+        <span class="step-line"></span>
+        <span class="step dim">02 &nbsp;拼圖</span>
+      </nav>
+      <div class="hd-spacer"></div>
+    </header>
+
+    <div class="view-body">
+      <div class="page-title">
+        <h2>選擇色系</h2>
+        <p>選擇一個色彩方向，或讓我們隨機推薦</p>
+      </div>
+
+      <div id="familyGrid" class="family-grid"></div>
+
+      <div class="random-wrap">
+        <button id="btnRandom" class="btn-random" onclick="randomSelect()">
+          <svg class="random-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M16 3l4 4-4 4M8 21l-4-4 4-4M20 7H4M4 17h16"/>
+          </svg>
+          隨機選取
+        </button>
+      </div>
+    </div>
+
+    <footer class="view-ft">
+      <button id="btnToGrid" class="btn-primary" onclick="goToStep('grid')" disabled>
+        下一步 &nbsp;→
+      </button>
+    </footer>
+  </section>
+
+
+  <!-- ══════════════════════════
+       GRID MAKER VIEW  (two-panel)
+  ══════════════════════════ -->
+  <section id="view-grid" class="view">
+    <header class="view-hd">
+      <button class="btn-ghost" onclick="goGridBack()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        返回
+      </button>
+      <nav class="step-nav">
+        <span class="step dim">01 &nbsp;色系</span>
+        <span class="step-line"></span>
+        <span class="step active">02 &nbsp;拼圖</span>
+      </nav>
+      <div id="familyBadge" class="family-badge"></div>
+    </header>
+
+    <div class="editor-layout">
+
+      <!-- ── LEFT PANEL: all controls ── -->
+      <aside class="editor-panel">
+        <div class="panel-scroll">
+
+          <!-- Activity info -->
+          <div class="panel-section">
+            <div class="panel-section-title">活動資訊</div>
+            <div class="event-fields-v">
+              <div class="field-group">
+                <label class="field-label" for="eventName">活動名稱</label>
+                <input id="eventName" class="field-input" type="text"
+                       placeholder="例：春日街拍走走" maxlength="30"
+                       oninput="state.eventName = this.value; scheduleLivePreview()">
+              </div>
+              <div class="field-group">
+                <label class="field-label" for="eventDate">活動日期</label>
+                <input id="eventDate" class="field-input" type="text"
+                       placeholder="2024.03.15" maxlength="20"
+                       oninput="state.eventDate = this.value; scheduleLivePreview()">
+              </div>
+              <div class="field-group">
+                <label class="field-label" for="authorName">作者署名</label>
+                <input id="authorName" class="field-input" type="text"
+                       placeholder="例：@yourname" maxlength="30"
+                       oninput="state.authorName = this.value; scheduleLivePreview()">
+              </div>
+            </div>
+          </div>
+
+          <!-- Grid mode -->
+          <div class="panel-section">
+            <div class="panel-section-title">拼圖格數</div>
+            <div class="size-selector">
+              <button class="size-btn" data-mode="1" onclick="switchGridMode(1)">
+                1 格<small>單張精選</small>
+              </button>
+              <button class="size-btn" data-mode="3" onclick="switchGridMode(3)">
+                3 格<small>橫式三聯</small>
+              </button>
+              <button class="size-btn active" data-mode="9" onclick="switchGridMode(9)">
+                9 格<small>九宮格</small>
+              </button>
+            </div>
+          </div>
+
+          <!-- Color scheme -->
+          <div class="panel-section">
+            <div class="panel-section-title section-title-row">
+              取色模式
+              <button class="feature-toggle" onclick="toggleColorDisplay()">
+                <span class="toggle-label" id="colorToggleLabel">開啟</span>
+                <span class="toggle-pill on" id="colorTogglePill"></span>
+              </button>
+            </div>
+            <div id="colorSchemeSelector" class="size-selector">
+              <button class="size-btn active" data-scheme="mono" onclick="switchColorScheme('mono')">
+                單色<small>Mono</small>
+              </button>
+              <button class="size-btn" data-scheme="adjacent" onclick="switchColorScheme('adjacent')">
+                鄰近<small>Adjacent</small>
+              </button>
+              <button class="size-btn" data-scheme="triad" onclick="switchColorScheme('triad')">
+                三角<small>Triad</small>
+              </button>
+              <button class="size-btn" data-scheme="tetrad" onclick="switchColorScheme('tetrad')">
+                四角<small>Tetrad</small>
+              </button>
+            </div>
+          </div>
+
+          <!-- Output size -->
+          <div class="panel-section">
+            <div class="panel-section-title">輸出尺寸</div>
+            <div class="size-selector-grid">
+              <button class="size-btn" data-w="1080" data-h="1080" onclick="switchOutputSize(1080,1080)">
+                1:1<small>正方形</small>
+              </button>
+              <button class="size-btn active" data-w="1080" data-h="1350" onclick="switchOutputSize(1080,1350)">
+                4:5直<small>直式</small>
+              </button>
+              <button class="size-btn" data-w="1350" data-h="1080" onclick="switchOutputSize(1350,1080)">
+                4:5橫<small>橫式</small>
+              </button>
+              <button class="size-btn" data-w="1080" data-h="1920" onclick="switchOutputSize(1080,1920)">
+                9:16直<small>直式</small>
+              </button>
+              <button class="size-btn" data-w="1920" data-h="1080" onclick="switchOutputSize(1920,1080)">
+                9:16橫<small>橫式</small>
+              </button>
+              <button class="size-btn" data-ratio="custom" onclick="switchOutputCustom()">
+                自訂<small>Custom</small>
+              </button>
+            </div>
+            <div class="size-custom-row" id="outputCustomRow" style="display:none">
+              <input type="number" id="customW" class="size-custom-input" placeholder="寬" min="400" max="4000" value="1080">
+              <span class="size-custom-sep">×</span>
+              <input type="number" id="customH" class="size-custom-input" placeholder="高" min="400" max="4000" value="1350">
+              <span class="size-custom-sep">px</span>
+              <button class="size-custom-apply" onclick="applyCustomSize()">套用</button>
+            </div>
+          </div>
+
+          <!-- Background color mode -->
+          <div class="panel-section">
+            <div class="panel-section-title">背景色調</div>
+            <div class="color-mode-grid" id="colorModeSelector">
+              <button class="color-mode-btn active" data-mode="white"  onclick="switchColorMode('white')">純白</button>
+              <button class="color-mode-btn"        data-mode="auto"   onclick="switchColorMode('auto')">照片取色</button>
+              <button class="color-mode-btn"        data-mode="border" onclick="switchColorMode('border')">邊框色調</button>
+              <button class="color-mode-btn"        data-mode="family" onclick="switchColorMode('family')">色系主題</button>
+            </div>
+            <!-- Sub-options for 照片取色, shown only when mode=auto -->
+            <div id="autoBgOptions" class="auto-bg-options" style="display:none">
+              <div class="auto-bg-style-row">
+                <button class="auto-style-btn active" data-astyle="grad-light" onclick="switchAutoBgStyle('grad-light')">
+                  漸層淺→深
+                </button>
+                <button class="auto-style-btn" data-astyle="grad-dark" onclick="switchAutoBgStyle('grad-dark')">
+                  漸層深→淺
+                </button>
+                <button class="auto-style-btn" data-astyle="mono" onclick="switchAutoBgStyle('mono')">
+                  單色
+                </button>
+              </div>
+              <div id="autoBgMonoPicker" class="auto-bg-mono-picker" style="display:none"></div>
+            </div>
+          </div>
+
+          <!-- Border & font -->
+          <div class="panel-section">
+            <div class="panel-section-title">邊框與字體</div>
+            <div class="frame-editor-v">
+              <div class="frame-row">
+                <span class="frame-label">邊框</span>
+                <div class="border-picker" id="borderColorPicker"></div>
+              </div>
+              <div class="frame-row">
+                <span class="frame-label">粗細</span>
+                <div class="border-width-row">
+                  <input type="range" id="borderWidthSlider" class="bw-slider"
+                         min="0" max="120" step="5" value="50"
+                         oninput="state.borderWidth=+this.value;document.getElementById('borderWidthVal').textContent=this.value+'px';scheduleLivePreview()">
+                  <span class="bw-val" id="borderWidthVal">50px</span>
+                </div>
+              </div>
+              <div class="frame-row">
+                <span class="frame-label">字體</span>
+                <div class="font-selector">
+                  <button class="font-btn active" data-font="default" onclick="switchFontStyle('default')">經典</button>
+                  <button class="font-btn" data-font="serif"   onclick="switchFontStyle('serif')">書法</button>
+                  <button class="font-btn" data-font="sans"    onclick="switchFontStyle('sans')">現代</button>
+                </div>
+              </div>
+              <div class="frame-row">
+                <span class="frame-label">文字色</span>
+                <div class="border-picker" id="textColorPicker"></div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /panel-scroll -->
+
+        <div class="panel-footer">
+          <p class="panel-hint">
+            已上傳 <span id="uploadCount">0</span> / <span id="uploadMax">9</span> 張
+          </p>
+          <button id="btnGenerate" class="btn-primary panel-generate-btn"
+                  onclick="triggerGenerate()" disabled>
+            生成拼圖
+          </button>
+        </div>
+      </aside>
+
+      <!-- ── MAIN: photo grid + live preview (merged) ── -->
+      <div class="editor-preview">
+        <div class="preview-grid-wrap">
+          <div id="photoGrid" class="photo-grid" data-mode="9"></div>
+          <p class="grid-hint">
+            點擊空格上傳照片 &nbsp;·&nbsp; 點已上傳照片可調整裁切範圍
+          </p>
+        </div>
+
+        <div class="preview-live-section">
+          <div class="preview-live-hd">
+            <span class="preview-live-title">即時預覽</span>
+            <span class="preview-live-badge">下載效果</span>
+          </div>
+          <div class="preview-live-body" id="livePreviewBody">
+            <canvas id="livePreviewCanvas" style="display:none"></canvas>
+            <div class="preview-live-empty" id="livePreviewPlaceholder">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+                <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
+              </svg>
+              <p>上傳照片後<br>即時預覽效果</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /editor-layout -->
+  </section>
+
+
+  <!-- ══════════════════════════
+       CROP MODAL
+  ══════════════════════════ -->
+  <div id="cropModal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" onclick="cancelCropModal()"></div>
+    <div class="modal-box crop-modal-box">
+      <header class="modal-hd">
+        <span class="modal-title">裁切 &amp; 取色</span>
+        <button class="btn-icon" onclick="cancelCropModal()" aria-label="關閉">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </header>
+      <div class="crop-tabs">
+        <button class="crop-tab active" data-mode="crop" onclick="setCropMode('crop')">裁切位置</button>
+        <button class="crop-tab" data-mode="color" onclick="setCropMode('color')">自訂取色</button>
+      </div>
+      <div class="crop-stage" id="cropStage">
+        <img id="cropImg" class="crop-img" draggable="false" alt="">
+        <div id="cropBox" class="crop-box"></div>
+      </div>
+      <div id="colorPickUI" class="color-pick-ui" style="display:none">
+        <div id="colorPickDots" class="color-pick-dots"></div>
+        <button class="btn-ghost" style="font-size:0.72rem;color:var(--text-3)" onclick="clearPickedColors()">清除</button>
+      </div>
+      <p id="colorPickHint" class="color-pick-hint" style="display:none">點擊照片選取色彩，最多 3 個取色點</p>
+      <p class="crop-hint" id="cropHint">拖曳方框選取要擷取的照片區域</p>
+      <div class="crop-zoom-row">
+        <svg class="crop-zoom-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+          <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/>
+        </svg>
+        <input type="range" id="cropZoom" class="crop-zoom-slider"
+               min="25" max="100" step="5" value="100"
+               oninput="cropState.scale=this.value/100; document.getElementById('cropZoomVal').textContent=this.value+'%'; updateCropViewport()">
+        <span class="crop-zoom-val" id="cropZoomVal">100%</span>
+      </div>
+      <footer class="modal-ft">
+        <button class="btn-outline" onclick="cancelCropModal()">取消</button>
+        <button class="btn-primary" onclick="confirmCrop()">確認裁切</button>
+      </footer>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════
+       PREVIEW MODAL
+  ══════════════════════════ -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" onclick="closeModal()"></div>
+    <div class="modal-box">
+      <header class="modal-hd">
+        <span class="modal-title">拼圖預覽</span>
+        <button class="btn-icon" onclick="closeModal()" aria-label="關閉">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </header>
+      <div class="modal-bd">
+        <canvas id="previewCanvas"></canvas>
+      </div>
+      <footer class="modal-ft">
+        <button class="btn-outline" onclick="closeModal()">重新編輯</button>
+        <button class="btn-primary" onclick="downloadCollage()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin-right:6px;vertical-align:-2px">
+            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+          </svg>
+          下載拼圖
+        </button>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Hidden file input -->
+  <input type="file" id="fileInput" accept="image/*" style="display:none">
+
+  <script src="app.js"></script>
+</body>
+</html>
