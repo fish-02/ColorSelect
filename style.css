@@ -98,8 +98,6 @@ input, textarea { font-family: var(--font-sans); }
 /* Hero (top section — fixed height, centered) */
 .guide-hero {
   position: relative;
-  z-index: 1;
-  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -115,22 +113,58 @@ input, textarea { font-family: var(--font-sans); }
   letter-spacing: 0.42em;
   text-transform: uppercase;
   color: var(--text-3);
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.intro-eyebrow::before,
+.intro-eyebrow::after {
+  content: '';
+  flex: 0 0 28px;
+  height: 1px;
+  background: var(--line-2);
+}
+
+.hero-accent-line {
+  width: 1px;
+  height: 28px;
+  margin: 0 auto 1.4rem;
+  background: linear-gradient(to bottom, var(--line-2), transparent);
 }
 
 .intro-title {
-  font-family: var(--font-serif);
+  font-family: 'Noto Sans TC', sans-serif;
   font-size: clamp(3.5rem, 10vw, 6.5rem);
-  font-weight: 300;
-  line-height: 0.9;
+  font-weight: 600;
+  line-height: 1.05;
   color: var(--text);
-  margin-bottom: 1.25rem;
-  letter-spacing: -0.01em;
+  margin-bottom: 1.4rem;
+  letter-spacing: -0.02em;
 }
 
 .intro-title em {
-  font-style: italic;
-  color: var(--text-2);
+  font-style: normal;
+  display: inline-block;
+  position: relative;
+  background: linear-gradient(125deg, #C9A96E 0%, #B0789A 55%, #9880CC 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding-bottom: 5px;
+}
+
+.intro-title em::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, #C9A96E, #9880CC);
+  opacity: 0.35;
+  border-radius: 1px;
 }
 
 .intro-sub {
@@ -141,20 +175,80 @@ input, textarea { font-family: var(--font-sans); }
   max-width: 400px;
 }
 
-/* Guide body — scrollable */
-.guide-body {
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.view.active .intro-eyebrow {
+  animation: heroFadeUp 0.75s var(--ease-out) 0.1s both;
+}
+.view.active .hero-accent-line {
+  animation: heroFadeUp 0.75s var(--ease-out) 0.22s both;
+}
+.view.active .intro-title {
+  animation: heroFadeUp 0.75s var(--ease-out) 0.32s both;
+}
+.view.active .intro-sub {
+  animation: heroFadeUp 0.75s var(--ease-out) 0.48s both;
+}
+
+/* Scrollable container: hero + guide content */
+.intro-scroll {
   position: relative;
   z-index: 1;
   flex: 1;
   overflow-y: auto;
   min-height: 0;
-  padding: 0 max(2rem, calc(50vw - 380px));
   scroll-behavior: smooth;
 }
 
-.guide-body::-webkit-scrollbar { width: 3px; }
-.guide-body::-webkit-scrollbar-track { background: transparent; }
-.guide-body::-webkit-scrollbar-thumb { background: var(--line-2); border-radius: 3px; }
+.intro-scroll::-webkit-scrollbar { width: 3px; }
+.intro-scroll::-webkit-scrollbar-track { background: transparent; }
+.intro-scroll::-webkit-scrollbar-thumb { background: var(--line-2); border-radius: 3px; }
+
+/* Sticky compact bar */
+.intro-sticky-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(249, 248, 245, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 0.35s var(--ease-out), transform 0.35s var(--ease-out);
+  pointer-events: none;
+}
+
+.intro-sticky-bar.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+.intro-sticky-title {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  background: linear-gradient(125deg, #C9A96E 0%, #B0789A 55%, #9880CC 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Guide body — padding wrapper */
+.guide-body {
+  padding: 0 max(2rem, calc(50vw - 380px));
+}
 
 .guide-divider {
   display: flex;
