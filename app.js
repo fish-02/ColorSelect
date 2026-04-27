@@ -391,6 +391,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (file && currentUploadIndex >= 0) handlePhotoUpload(currentUploadIndex, file);
     e.target.value = '';
   });
+
+  const introScroll = document.getElementById('introScroll');
+  const guideHero   = document.getElementById('guideHero');
+  const stickyBar   = document.getElementById('introStickyBar');
+  if (introScroll && guideHero && stickyBar) {
+    introScroll.addEventListener('scroll', () => {
+      stickyBar.classList.toggle('visible', introScroll.scrollTop >= guideHero.offsetHeight);
+    }, { passive: true });
+  }
 });
 
 
