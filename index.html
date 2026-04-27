@@ -7,7 +7,7 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📷</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Noto+Serif+TC:wght@300;400&family=ZCOOL+QingKe+HuangYou&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Noto+Serif+TC:wght@300;400&family=ZCOOL+QingKe+HuangYou&family=Noto+Sans+TC:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,14 +18,22 @@
   <section id="view-intro" class="view active">
     <div class="intro-bg"></div>
 
+    <!-- Sticky compact bar (appears on scroll) -->
+    <div class="intro-sticky-bar" id="introStickyBar">
+      <span class="intro-sticky-title">街拍色彩誌</span>
+    </div>
+
+    <!-- Single scrollable container: hero + guide content -->
+    <div class="intro-scroll" id="introScroll">
+
     <!-- Hero -->
-    <div class="guide-hero">
+    <div class="guide-hero" id="guideHero">
       <p class="intro-eyebrow">Street Palette</p>
+      <div class="hero-accent-line"></div>
       <h1 class="intro-title">街拍<br><em>色彩誌</em></h1>
       <p class="intro-sub">記錄每個瞬間的色彩故事，打造專屬的街拍活動拼圖</p>
     </div>
 
-    <!-- Scrollable guide body -->
     <div class="guide-body">
 
       <div class="guide-divider">
@@ -136,6 +144,7 @@
       <div class="guide-spacer"></div>
 
     </div>
+    </div><!-- /intro-scroll -->
 
     <!-- CTA footer -->
     <div class="guide-footer">
